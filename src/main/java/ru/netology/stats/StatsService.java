@@ -2,19 +2,19 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public int calculateSum(int[] sales) {
-        int sum = 0;
-        for (int sale : sales) {
+    public long calculateSum(long[] sales) {
+        long sum = 0;
+        for (long sale : sales) {
             sum = sum + sale;
         }
         return sum;
     }
 
-    public int calculateAvg(int[] sales) {
+    public long calculateAvg(long[] sales) {
         return calculateSum(sales) / sales.length;
     }
 
-    public int sumMaxMonth(long[] sales) {
+    public long sumMaxMonth(long[] sales) {
         int maxMonth = 0;
         int month = 0; // переменная для индекса рассматриваемого месяца в массиве
         for (long sale : sales) {
@@ -43,9 +43,9 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int amountMonthUnderAvg(int[] sales) {
+    public long amountMonthUnderAvg(long[] sales) {
         int count = 0;
-        int salesAvg = calculateAvg(sales); // Системе легче производить рассчет
+        long salesAvg = calculateAvg(sales); // Системе легче производить рассчет
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < salesAvg) {
                 count++;
@@ -54,9 +54,9 @@ public class StatsService {
         return count;
     }
 
-    public int amountMonthOverAvg(int[] sales) {
+    public long amountMonthOverAvg(long[] sales) {
         int count = 0;
-        int salesAvg = calculateAvg(sales);
+        long salesAvg = calculateAvg(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > salesAvg) {
                 count++;
