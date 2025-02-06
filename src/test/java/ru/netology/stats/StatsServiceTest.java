@@ -1,6 +1,7 @@
 package ru.netology.stats;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StatsServiceTest {
@@ -8,7 +9,7 @@ class StatsServiceTest {
     void shouldCalculateSum() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 180;
+        int expected = 180;
 
         long actual = service.calculateSum(sales);
 
@@ -20,7 +21,7 @@ class StatsServiceTest {
     void shouldCalculateAvg() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 15;
+        int expected = 15;
 
         long actual = service.calculateAvg(sales);
 
@@ -32,9 +33,9 @@ class StatsServiceTest {
     void shouldSumMaxMonth() {
         StatsService service = new StatsService();
         long[] maxMonth = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 8;
+        int expected = 8;
 
-        long actual = service.sumMaxMonth(maxMonth);
+        int actual = service.sumMaxMonth(maxMonth);
 
         assertEquals(expected, actual);
     }
@@ -43,9 +44,9 @@ class StatsServiceTest {
     void shouldSumMinMonth() {
         StatsService service = new StatsService();
         long[] minMonth = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 9;
+        int expected = 9;
 
-        long actual = service.sumMinMonth(minMonth);
+        int actual = service.sumMinMonth(minMonth);
 
         assertEquals(expected, actual);
     }
@@ -56,18 +57,18 @@ class StatsServiceTest {
         long[] amountMonthUnderAvg = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
 
-        long actual = service.amountMonthUnderAvg(amountMonthUnderAvg);
+        int actual = service.amountMonthUnderAvg(amountMonthUnderAvg);
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldamountMonthOverAvg() {
+    void shouldAmountMonthOverAvg() {
         StatsService service = new StatsService();
         long[] amountMonthOverAvg = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
 
-        long actual = service.amountMonthOverAvg(amountMonthOverAvg);
+        int actual = service.amountMonthOverAvg(amountMonthOverAvg);
 
         assertEquals(expected, actual);
     }
